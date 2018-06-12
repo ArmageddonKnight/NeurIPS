@@ -1,0 +1,64 @@
+\documentclass{article}
+
+% if you need to pass options to natbib, use, e.g.:
+% \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading nips_2018
+
+% ready for submission
+\usepackage[final]{nips}
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+
+\usepackage{float}          % floating images
+\usepackage{wrapfig}        % inline figure and table
+\usepackage{amsmath}        % advanced math
+\usepackage{multirow}       % multirow table entry
+\usepackage{tabularx}       % advanced tabular
+\usepackage{graphicx}       % includegraphics
+\usepackage{subcaption}     % subfigure
+\usepackage[export]{adjustbox}    % vertical alignment
+\usepackage[shortlabels, inline]{enumitem}   % inline enumeration
+
+\title{}
+
+% The \author macro works with any number of authors. There are two
+% commands used to separate the names and addresses of multiple
+% authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to
+% break the lines. Using \AND forces a line break at that point. So,
+% if LaTeX puts 3 of 4 authors names on the first line, and the last
+% on the second line, try using \AND instead of \And before the third
+% author name.
+
+\author{
+	Bojian Zheng \\
+	University of Toronto \\
+	\texttt{bojian@cs.toronto.edu} \\
+}
+
+\begin{document}
+% \nipsfinalcopy is no longer used
+
+\maketitle
+
+
+\makeatletter
+\g@addto@macro{\UrlBreaks}{\UrlOrds}
+\g@addto@macro{\UrlBreaks}{\do\/%
+\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
+\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
+\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0\do\.}
+\makeatother
+
+% \bibliographystyle{ACM-Reference-Format}
+% {\footnotesize \bibliography{bibliography}}
+
+\end{document}
