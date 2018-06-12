@@ -1,39 +1,30 @@
 \documentclass{article}
 
-% if you need to pass options to natbib, use, e.g.:
-% \PassOptionsToPackage{numbers, compress}{natbib}
-% before loading nips_2018
-
-% ready for submission
 \usepackage[nonatbib, final]{nips}
 
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{microtype}      % microtypography
-\usepackage{soul}           % underline, strikethrough
-\usepackage{afterpage}      % blank page
-\usepackage[shortlabels, inline]{enumitem} % inline enumeration
+\usepackage{hyperref, url}
+\usepackage{microtype}
 % Character Encoding
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-% Tables and Figures
-\usepackage{float}          % floating images
-\usepackage{wrapfig}        % inline figure and table
-\usepackage{graphicx}       % includegraphics
-\usepackage{subcaption}     % subfigure
-\usepackage[export]{adjustbox} % vertical alignment
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
 
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{tabularx}       % advanced tabular
-\usepackage{multirow}       % multirow table cells
-\usepackage{tablefootnote}  % table footnotes
+\usepackage{soul} % Underline, Strikethrough
+\usepackage{afterpage} % Blank Page
+\usepackage[shortlabels, inline]{enumitem} % Inline Enumeration
+% Tables and Figures
+\usepackage{float, graphicx}
+\usepackage{subcaption}
+\usepackage{wrapfig}
+\usepackage[export]{adjustbox} % Vertical Alignment
+
+\usepackage{booktabs, tabularx,%
+multirow, tablefootnote}
 % Monospaced Listings
-\usepackage{fancyvrb}           % Fancy Verbatim
-\usepackage{listings}           % Source Code Listings
-% AMS Math Packages
-\usepackage{amsmath}        % advanced math
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{fancyvrb}
+\usepackage{listings}
+% Math Packages
+\usepackage{nicefrac}
+\usepackage{amsmath, amsfonts}
 
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
