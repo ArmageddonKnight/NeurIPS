@@ -1,15 +1,15 @@
 \documentclass{article}
 
 \usepackage[nonatbib, final]{nips}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref, url, microtype}
 
 \makeatletter
 \renewcommand{\@noticestring}{}
 \makeatother
 
 \input{includes}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{hyperref, url, microtype}
 
 \title{}
 
@@ -25,6 +25,7 @@
 
 
 
-\input{bibliography}
+\bibliographystyle{ACM-Reference-Format}
+% {\footnotesize \bibliography{bibliography}}
 
 \end{document}
