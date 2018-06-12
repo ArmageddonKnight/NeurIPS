@@ -23,3 +23,4 @@ clean:
 .PHONY: style-upgrade
 style-upgrade:
 	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR).sty -O nips.sty
+	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst
