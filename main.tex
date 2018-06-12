@@ -7,24 +7,67 @@
 % ready for submission
 \usepackage[final]{nips}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
 \usepackage{hyperref}       % hyperlinks
 \usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
 \usepackage{microtype}      % microtypography
-
+\usepackage{soul}           % underline, strikethrough
+\usepackage{afterpage}      % blank page
+\usepackage[shortlabels, inline]{enumitem} % inline enumeration
+% Character Encoding
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+% Tables and Figures
 \usepackage{float}          % floating images
 \usepackage{wrapfig}        % inline figure and table
-\usepackage{amsmath}        % advanced math
-\usepackage{multirow}       % multirow table entry
-\usepackage{tabularx}       % advanced tabular
 \usepackage{graphicx}       % includegraphics
 \usepackage{subcaption}     % subfigure
-\usepackage[export]{adjustbox}    % vertical alignment
-\usepackage[shortlabels, inline]{enumitem}   % inline enumeration
+\usepackage[export]{adjustbox} % vertical alignment
+
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{tabularx}       % advanced tabular
+\usepackage{multirow}       % multirow table cells
+\usepackage{tablefootnote}  % table footnotes
+% Monospaced Listings
+\usepackage{fancyvrb}           % Fancy Verbatim
+\usepackage{listings}           % Source Code Listings
+% AMS Math Packages
+\usepackage{amsmath}        % advanced math
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\bfseries\ttfamily,   % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{gray},       % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  % frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=C++,                    % the language of the code
+  % morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\color{black},       % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{red},         % string literal style
+  tabsize=4,	                     % sets default tabsize to 4 spaces
+  % title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\newcommand{\Emph}[1]{\ul{\textbf{#1}}}
+
+\makeatletter
+\renewcommand{\@noticestring}{}
+\makeatother
 
 \title{}
 
@@ -48,6 +91,7 @@
 % \nipsfinalcopy is no longer used
 
 \maketitle
+
 
 
 \makeatletter
