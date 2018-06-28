@@ -18,7 +18,7 @@ endif
 clean:
 	find . \( -name "*.aux" -o -name "*.bbl" -o -name "*.blg" -o \
 	          -name "*.log" -o -name "*.out" -o -name "*.synctex.gz" \) -o \
-	       \( -name "*.pdf" -a -not -path "./graphs/*" -a -not -path "./acmart/*" \) | xargs $(RM)
+	       \( -name "*.pdf" -a -not -path "./graphs/*" \) | xargs $(RM)
 
 .PHONY: style-upgrade
 style-upgrade:
