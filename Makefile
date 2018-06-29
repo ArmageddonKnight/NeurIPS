@@ -2,11 +2,13 @@ all: main.pdf
 
 YEAR := $(shell date +%Y)
 
+INCLUDE := ./shared/include.tex
+
 BIBTEX_FILEs := $(wildcard *.bib)
 GRAPHs := $(wildcard ./graphs/*)
 CODE_BLOCKs := $(wildcard ./code_blocks/*)
 
-%.pdf: %.tex $(BIBTEX_FILEs) $(GRAPHs) $(CODE_BLOCKs)
+%.pdf: %.tex $(INCLUDE) $(BIBTEX_FILEs) $(GRAPHs) $(CODE_BLOCKs)
 ifneq ($(BIBTEX_FILEs),)
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	bibtex $*.aux
@@ -25,3 +27,4 @@ style-upgrade:
 	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR).sty -O nips.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
+	git submodule update --init && cd shared && git checkout master && git pull
