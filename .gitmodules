@@ -1,3 +1,3 @@
-[submodule "shared"]
-	path = shared
-	url = https://github.com/ArmageddonKnight/Latex_Includes
+[submodule "include"]
+	path = include
+	url = https://gist.github.com/77e162a2491bb50328dcff2363cf15c2.git
