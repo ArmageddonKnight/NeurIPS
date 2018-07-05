@@ -1,3 +1,3 @@
-# Latex Includes
+# Latex Include
 
-This repository contains common includes in latex templates.
+This repository contains common packages in latex templates.
