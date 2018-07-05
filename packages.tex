@@ -5,7 +5,11 @@
 
 \usepackage{soul} % Underline, Strikethrough
 \usepackage{afterpage} % Blank Page
-\usepackage[shortlabels, inline]{enumitem} % Inline Enumeration
+\usepackage[super]{nth} % 1st, 2nd, etc.
+\makeatletter
+\@ifclassloaded{beamer}{} % Inline Enumeration
+  {\usepackage[shortlabels, inline]{enumitem}}
+\makeatother
 % Tables and Figures
 \usepackage{float, graphicx, wrapfig, subcaption}
 \usepackage[export]{adjustbox} % Vertical Alignment
@@ -40,9 +44,11 @@
   showtabs=false,                  % show tabs within strings adding particular underscores
   stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{red},         % string literal style
-  tabsize=4,	                     % sets default tabsize to 4 spaces
+  tabsize=4,                       % sets default tabsize to 4 spaces
   % title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
+
+\newcommand{\Emph}[1]{\ul{\textbf{#1}}}
 
 \makeatletter
 \@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
