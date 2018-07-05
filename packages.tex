@@ -7,8 +7,9 @@
 \usepackage{afterpage} % Blank Page
 \usepackage[super]{nth} % 1st, 2nd, etc.
 \makeatletter
-\@ifclassloaded{beamer}{} % Inline Enumeration
-  {\usepackage[shortlabels, inline]{enumitem}}
+\@ifclassloaded{beamer}{}{
+  \usepackage[shortlabels, inline]{enumitem}
+} % Inline Enumeration
 \makeatother
 % Tables and Figures
 \usepackage{float, graphicx, wrapfig, subcaption}
