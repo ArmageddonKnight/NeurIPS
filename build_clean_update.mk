@@ -26,4 +26,4 @@ push-include:
 
 .PHONY: pull-include
 pull-include:
-	git subtree pull --prefix include https://github.com/ArmageddonKnight/Latex_Include master
+	git subtree pull --prefix include https://github.com/ArmageddonKnight/Latex_Include master --squash
