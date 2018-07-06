@@ -18,6 +18,7 @@ clean:
 	find . -maxdepth 1 \
 		\( -name "*.aux" -o -name "*.bbl" -o -name "*.blg" -o \
 	           -name "*.log" -o -name "*.out" -o -name "*.pdf" -o \
+		   -name "*.nav" -o -name "*.snm" -o -name "*.toc" -o \
 		   -name "*.synctex.gz" \) | xargs $(RM)
 
 .PHONY: push-include
