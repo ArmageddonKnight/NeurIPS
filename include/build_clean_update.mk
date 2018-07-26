@@ -29,7 +29,6 @@ push-include:
 pull-include:
 	git subtree pull --prefix include https://github.com/ArmageddonKnight/Latex_Include master --squash
 
-TEMPLATE := $(shell basename -s .git `git config --get remote.origin.url`)
 DOC_ROOT := $(shell pwd)
 GIT_ROOT := $(shell git rev-parse --show-toplevel)
 
