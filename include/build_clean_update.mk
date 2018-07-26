@@ -34,6 +34,6 @@ GIT_ROOT := $(shell git rev-parse --show-toplevel)
 
 template-update:
 	-git add -A && git commit -m "Checkpoint before template update." && git push
-	cd $(GIT_ROOT) && git subtree pull \
+	 cd $(GIT_ROOT) && git subtree pull \
 		--prefix=$(shell python -c "import os.path; print os.path.relpath('$(DOC_ROOT)', '$(GIT_ROOT)')") \
 		https://github.com/ArmageddonKnight/$(TEMPLATE) master --squash
