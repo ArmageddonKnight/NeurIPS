@@ -21,10 +21,20 @@ clean:
 		   -name "*.nav" -o -name "*.snm" -o -name "*.toc" -o \
 		   -name "*.synctex.gz" \) | xargs $(RM)
 
-.PHONY: push-include
+.PHONY: push-include pull-include template-update
+
 push-include:
 	git subtree push --prefix include https://github.com/ArmageddonKnight/Latex_Include master
-
-.PHONY: pull-include
+	
 pull-include:
 	git subtree pull --prefix include https://github.com/ArmageddonKnight/Latex_Include master --squash
+
+TEMPLATE := $(shell basename -s .git `git config --get remote.origin.url`)
+DOC_ROOT := $(shell pwd)
+GIT_ROOT := $(shell git rev-parse --show-toplevel)
+
+template-update:
+	-git add -A && git commit -m "Checkpoint before template update." && git push
+	cd $(GIT_ROOT) && git subtree pull \
+		--prefix=$(shell python -c "import os.path; print os.path.relpath('$(DOC_ROOT)', '$(GIT_ROOT)')") \
+		https://github.com/ArmageddonKnight/$(TEMPLATE) master --squash
