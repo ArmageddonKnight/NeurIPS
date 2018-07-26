@@ -1,5 +1,7 @@
 include include/build_clean_update.mk
 
+TEMPLATE := NIPS
+
 YEAR := $(shell date +%Y)
 
 .PHONY: style-update
