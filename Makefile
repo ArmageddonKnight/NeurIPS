@@ -7,5 +7,7 @@ YEAR := $(shell date +%Y)
 .PHONY: style-update
 style-update: pull-include
 	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR).sty -O nips.sty
+	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR)_author_response.sty \
+		-O nips_author_response.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
