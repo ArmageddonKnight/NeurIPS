@@ -6,9 +6,11 @@ jobs:
       - image: armageddonknight/texlive:latest
     steps:
       - checkout
-      - run: make all
-      - run: |
-        mkdir -p /tmp/artifacts/
-        mv main.pdf /tmp/artifacts/
+      - run: 
+        name: Gererate PDF Artifact
+        command: |
+          mkdir -p /tmp/artifacts/
+          make all && \
+          mv main.pdf /tmp/artifacts/
       - store_artifacts:
           path: /tmp/artifacts
