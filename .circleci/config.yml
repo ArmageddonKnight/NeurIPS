@@ -1,0 +1,14 @@
+version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: armageddonknight/texlive:latest
+    steps:
+      - checkout
+      - run: make all
+      - run: |
+        mkdir -p /tmp/artifacts/
+        mv main.pdf /tmp/artifacts/
+      - store_artifacts:
+          path: /tmp/artifacts
