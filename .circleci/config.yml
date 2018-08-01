@@ -11,7 +11,7 @@ jobs:
                 command: |
                     mkdir -p /tmp/artifacts/
                     make all
-                    mv main.pdf /tmp/artifacts/
+                    cp main.pdf /tmp/artifacts/
             - run: 
                 name: Updating Latest Release
                 command: |
