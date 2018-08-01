@@ -1,0 +1,12 @@
+version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: armageddonknight/texlive:latest
+    steps:
+      - checkout
+      - run: mkdir -p /tmp/artifacts/ && make all && mv main.pdf /tmp/artifacts/
+      - run: openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 >> .circlerc
+      - store_artifacts:
+          path: /tmp/artifacts
