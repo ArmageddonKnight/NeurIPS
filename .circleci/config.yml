@@ -24,7 +24,7 @@ jobs:
                     wget https://github.com/github/hub/releases/download/v2.5.0/hub-linux-amd64-2.5.0.tgz
                     tar zxvf hub-linux-amd64-2.5.0.tgz
                     PATH=$PATH:hub-linux-amd64-2.5.0/bin
-                    hub release delete
+                    hub release delete latest
                     hub release create -a main.pdf -m "Latest PDF Artifact" latest
             - store_artifacts:
                 path: /tmp/artifacts
