@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run: mkdir -p /tmp/artifacts/ && make all && mv main.pdf /tmp/artifacts/
-      - run: openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 >> .circlerc
-      - run: echo $GITHUB_TOKEN
+      - run: openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 > .gitoken && source .gitoken
+      - run: echo "$GITHUB_TOKEN"
       - store_artifacts:
           path: /tmp/artifacts
