@@ -13,14 +13,10 @@ jobs:
                     make all
                     mv main.pdf /tmp/artifacts/
             - run: 
-                name: Decypting Github Token
-                command: |
-                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken
-                    source .gitoken
-                    echo $GITHUB_TOKEN
-            - run:
                 name: Updating Latest Release
                 command: |
+                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken
+                    source .gitoken && echo $GITHUB_TOKEN
                     wget https://github.com/github/hub/releases/download/v2.5.0/hub-linux-amd64-2.5.0.tgz
                     tar zxvf hub-linux-amd64-2.5.0.tgz
                     PATH=$PATH:hub-linux-amd64-2.5.0/bin
