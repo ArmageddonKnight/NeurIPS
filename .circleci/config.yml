@@ -15,7 +15,7 @@ jobs:
             - run: 
                 name: Decypting Github Token
                 command: |
-                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 > .gitoken;
+                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken;
                     source .gitoken;
                     echo $GITHUB_TOKEN;
             - store_artifacts:
