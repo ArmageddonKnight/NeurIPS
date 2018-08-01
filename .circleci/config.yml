@@ -1,22 +1,22 @@
 version: 2.0
 
 jobs:
-  build:
-    docker:
-      - image: armageddonknight/texlive:latest
-    steps:
-      - checkout
-      - run: 
-        name: Generating PDF Artifact
-        command: |
-          mkdir -p /tmp/artifacts/ ;
-          make all;
-          mv main.pdf /tmp/artifacts/;
-      - run: 
-        name: Decypting Github Token
-        command: |
-          openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 > .gitoken;
-          source .gitoken;
-          echo $GITHUB_TOKEN;
-      - store_artifacts:
-          path: /tmp/artifacts
+    build:
+        docker:
+            - image: armageddonknight/texlive:latest
+        steps:
+            - checkout
+            - run: 
+                name: Generating PDF Artifact
+                command: |
+                    mkdir -p /tmp/artifacts/;
+                    make all;
+                    mv main.pdf /tmp/artifacts/;
+            - run: 
+                name: Decypting Github Token
+                command: |
+                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k 1000301416 > .gitoken;
+                    source .gitoken;
+                    echo $GITHUB_TOKEN;
+            - store_artifacts:
+                path: /tmp/artifacts
