@@ -1,3 +1,3 @@
-# NIPS[![CircleCI](https://circleci.com/gh/ArmageddonKnight/NIPS/tree/master.svg?style=svg)](https://circleci.com/gh/ArmageddonKnight/NIPS/tree/master)![PDF](https://freeiconshop.com/wp-content/uploads/edd/pdf-outline.png)
+# NIPS[![CircleCI](https://circleci.com/gh/ArmageddonKnight/NIPS/tree/master.svg?style=svg)](https://circleci.com/gh/ArmageddonKnight/NIPS/tree/master)
 
 Latex template based on NIPS.
