@@ -7,19 +7,24 @@ jobs:
         steps:
             - checkout
             - run: 
-                name: Generating PDF Artifact
+                name: Build PDF Artifact
                 command: |
                     mkdir -p /tmp/artifacts/
                     make all
                     cp main.pdf /tmp/artifacts/
             - run: 
-                name: Updating Latest Release
+                name: Decode Access Token
                 command: |
                     openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken
-                    source .gitoken && echo $GITHUB_TOKEN
+            - run:
+                name: Download HUB Toolkit
+                command: |
                     wget https://github.com/github/hub/releases/download/v2.5.0/hub-linux-amd64-2.5.0.tgz
                     tar zxvf hub-linux-amd64-2.5.0.tgz
-                    PATH=$PATH:hub-linux-amd64-2.5.0/bin
+            - run:
+                name: Update Latest Release
+                command: |
+                    source .gitoken && PATH=$PATH:hub-linux-amd64-2.5.0/bin
                     hub release delete latest
                     hub release create -a main.pdf -m "Latest PDF Artifact" latest
             - store_artifacts:
