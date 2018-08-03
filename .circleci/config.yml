@@ -25,7 +25,8 @@ jobs:
                 name: Update Latest Release
                 command: |
                     source .gitoken && PATH=$PATH:hub-linux-amd64-2.5.0/bin
-                    hub release delete latest
+                    if [ "$(hub release | grep "latest")" != "" ]; then \
+                        hub release delete latest; fi
                     hub release create -a main.pdf -m "Latest PDF Artifact" latest
             - store_artifacts:
                 path: /tmp/artifacts
