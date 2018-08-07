@@ -19,7 +19,8 @@ jobs:
             - run:
                 name: Update Latest Release
                 command: |
-                    source .gitoken && export PATH=$PATH:~/hub_toolkit/bin
+                    source .gitoken && export PATH=$PATH:~/hub_toolkit/bin && \
+                        cd ${CIRCLE_WORKING_DIRECTORY}
                     if [ "$(hub release | grep "latest")" != "" ]; then \
                         hub release delete latest; fi
                     hub release create -a main.pdf -m "Latest PDF Artifact" latest
