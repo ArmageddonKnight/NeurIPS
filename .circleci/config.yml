@@ -3,7 +3,7 @@ version: 2.0
 jobs:
     build:
         docker:
-            - image: armageddonknight/texlive:latest
+            - image: armageddonknight/latex_include:latest
         steps:
             - checkout
             - run: 
@@ -12,19 +12,11 @@ jobs:
                     mkdir -p /tmp/artifacts/
                     make all
                     cp main.pdf /tmp/artifacts/
-            - run: 
-                name: Decode Access Token
-                command: |
-                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken
-            - run:
-                name: Download HUB Toolkit
-                command: |
-                    wget https://github.com/github/hub/releases/download/v2.5.0/hub-linux-amd64-2.5.0.tgz
-                    tar zxvf hub-linux-amd64-2.5.0.tgz
             - run:
                 name: Update Latest Release
                 command: |
-                    source .gitoken && PATH=$PATH:hub-linux-amd64-2.5.0/bin
+                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY \
+                        > .gitoken && source .gitoken
                     if [ "$(hub release | grep "latest")" != "" ]; then \
                         hub release delete latest; fi
                     hub release create -a main.pdf -m "Latest PDF Artifact" latest
