@@ -8,4 +8,4 @@ RUN apt-get update && apt-get install -y wget make texlive-full
 RUN wget https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz && \
 	tar zxvf hub-linux-amd64-${HUB_VERSION}.tgz && \
 	rm hub-linux-amd64-${HUB_VERSION}.tgz && \
-	mv hub-linux-amd64-${HUB_VERSION} hub
+	mv hub-linux-amd64-${HUB_VERSION} ~/hub_toolkit
