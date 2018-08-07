@@ -6,6 +6,6 @@ ENV HUB_VERSION="2.5.0"
 RUN apt-get update && apt-get install -y wget make texlive-full
 
 RUN wget https://github.com/github/hub/releases/download/v${HUB_VERSION}/hub-linux-amd64-${HUB_VERSION}.tgz && \
-	tar zxvf hub-linux-amd64-${HUB_VERSION}.tgz && rm hub-linux-amd64-${HUB_VERSION}.tgz
-
-ENV PATH="${PATH}:hub-linux-amd64-2.5.0/bin"
+	tar zxvf hub-linux-amd64-${HUB_VERSION}.tgz && \
+	rm hub-linux-amd64-${HUB_VERSION}.tgz && \
+	mv hub-linux-amd64-${HUB_VERSION} hub
