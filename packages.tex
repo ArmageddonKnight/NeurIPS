@@ -19,7 +19,7 @@
 \usepackage{fancyvrb, listings}
 % Math Packages
 \usepackage{nicefrac}
-\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsmath, amsthm, amssymb, amsbsy}
 
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
@@ -50,6 +50,8 @@
 }
 
 \newcommand{\Emph}[1]{\ul{\textbf{#1}}}
+\newcommand{\EmphMathText}[1]{\underline{\mathbf{#1}}}
+\newcommand{\EmphMath}[1]{\underline{\boldsymbol{#1}}}
 \newcommand{\valignc}[1]{\raisebox{-0.5\height}{#1}}
 
 \makeatletter
