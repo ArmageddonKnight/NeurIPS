@@ -12,16 +12,5 @@ jobs:
                     mkdir -p /tmp/artifacts/
                     make all
                     cp main.pdf /tmp/artifacts/
-            - run: 
-                name: Decode Access Token
-                command: |
-                    openssl aes-256-cbc -d -in include/.gitoken_encrypted -k $GITHUB_KEY > .gitoken
-            - run:
-                name: Update Latest Release
-                command: |
-                    source .gitoken && export PATH=$PATH:~/hub_toolkit/bin
-                    if [ "$(hub release | grep "latest")" != "" ]; then \
-                        hub release delete latest; fi
-                    hub release create -a main.pdf -m "Latest PDF Artifact" latest
             - store_artifacts:
                 path: /tmp/artifacts
