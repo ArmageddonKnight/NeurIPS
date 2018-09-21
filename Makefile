@@ -30,7 +30,7 @@ template-update:
 
 YEAR := $(shell date +%Y)
 
-style-update: pull-include
+style-update:
 	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR).sty -O nips.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
