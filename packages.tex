@@ -1,17 +1,15 @@
+\usepackage[nonatbib, final]{nips}
+
+% Font and Input Encodings
+\usepackage{microtype}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
-\usepackage{microtype}
 
 \usepackage[numbers]{natbib} % Natbib Citations
 \usepackage{soul} % Underline, Strikethrough
 \usepackage{afterpage} % Blank Page
 \usepackage[super]{nth} % 1st, 2nd, etc.
-\makeatletter
-\@ifclassloaded{beamer}{}{
-  \usepackage[shortlabels, inline]{enumitem}
-} % Inline Enumeration
-\makeatother
+\usepackage[shortlabels, inline]{enumitem} % Inline Enumeration
 % Tables and Figures
 \usepackage{float, graphicx, wrapfig, subcaption}
 \usepackage{booktabs, tabularx, multirow, tablefootnote}
@@ -49,13 +47,13 @@
   % title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
+\newcommand{\valignc}[1]{\raisebox{-0.5\height}{#1}}
 \newcommand{\Emph}[1]{\ul{\textbf{#1}}}
 \newcommand{\EmphMathText}[1]{\underline{\mathbf{#1}}}
 \newcommand{\EmphMath}[1]{\underline{\boldsymbol{#1}}}
-\newcommand{\valignc}[1]{\raisebox{-0.5\height}{#1}}
 
 \makeatletter
-\@ifpackageloaded{hyperref}{}{\usepackage{hyperref}}
+\usepackage{hyperref}
 
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \g@addto@macro{\UrlBreaks}{\do\/%
