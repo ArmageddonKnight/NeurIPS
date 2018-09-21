@@ -6,6 +6,7 @@
 \usepackage[numbers]{natbib} % Natbib Citations
 
 \usepackage{soul} % Underline, Strikethrough
+\usepackage{hyperref} % Urls, Hyperrefs
 \usepackage[super]{nth} % 1st, 2nd, etc.
 \usepackage[shortlabels, inline]{enumitem} % Inline Enumeration
 % Tables and Figures
@@ -51,8 +52,6 @@
 \newcommand{\EmphMath}[1]{\underline{\boldsymbol{#1}}}
 
 \makeatletter
-\usepackage{hyperref}
-
 \g@addto@macro{\UrlBreaks}{\UrlOrds}
 \g@addto@macro{\UrlBreaks}{\do\/%
 \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
