@@ -1,14 +1,17 @@
-% Font and Input Encodings
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-\usepackage{microtype} % micro typography
-\usepackage[numbers]{natbib} % Natbib Citations
+\usepackage{microtype}
+
+\usepackage[numbers]{natbib}
 
 \usepackage{soul} % Underline, Strikethrough
-\usepackage{hyperref} % Urls, Hyperrefs
-\usepackage[super]{nth} % 1st, 2nd, etc.
-\usepackage[shortlabels, inline]{enumitem} % Inline Enumeration
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage[super]{nth}
+\usepackage[ruled]{algorithm2e}
+\usepackage[shortlabels, inline]{enumitem}
 % Tables and Figures
 \usepackage{float, graphicx, wrapfig, subcaption}
 \usepackage{booktabs, tabularx, multirow, tablefootnote}
@@ -16,23 +19,25 @@
 \usepackage{fancyvrb, listings}
 % Math Packages
 \usepackage{nicefrac}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
 \usepackage{amsmath, amsthm, amssymb, amsbsy}
 
 \lstset{ %
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
-  basicstyle=\bfseries\ttfamily,   % the size of the fonts that are used for the code
+  basicstyle=\ttfamily,            % the size of the fonts that are used for the code
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
   commentstyle=\color{gray},       % comment style
-  deletekeywords={...},            % if you want to delete keywords from the given language
+  % deletekeywords={...},            % if you want to delete keywords from the given language
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
   extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
-  frame=none,                      % adds a frame around the code
+  % frame=single,                    % adds a frame around the code
   keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
   keywordstyle=\color{blue},       % keyword style
   language=C++,                    % the language of the code
-  morekeywords={*,...},            % if you want to add more keywords to the set
+  % morekeywords={*,...},            % if you want to add more keywords to the set
   numbers=none,                    % where to put the line-numbers; possible values are (none, left, right)
   numbersep=5pt,                   % how far the line-numbers are from the code
   numberstyle=\color{black},       % the style that is used for the line-numbers
@@ -43,7 +48,7 @@
   stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{red},         % string literal style
   tabsize=4,                       % sets default tabsize to 4 spaces
-  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+  % title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
 }
 
 \newcommand{\valignc}[1]{\raisebox{-0.5\height}{#1}}
@@ -58,3 +63,13 @@
 \do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
 \do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0\do\.}
 \makeatother
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem*{remark}{Remark}
+\newtheorem*{example}{Example}
+\newtheorem*{observation}{Observation}
