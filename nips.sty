@@ -1,5 +1,5 @@
 % partial rewrite of the LaTeX2e package for submissions to the
-% Conference on Neural Information Processing Systems (NIPS):
+% Conference on Neural Information Processing Systems (NeurIPS):
 %
 % - uses more LaTeX conventions
 % - line numbers at submission time replaced with aligned numbers from
@@ -10,19 +10,20 @@
 %   [nonatbib] package option
 % - adds foot line to first page identifying the conference
 % - adds preprint option for submission to e.g. arXiv
+% - conference acronym modified
 %
 % Roman Garnett (garnett@wustl.edu) and the many authors of
 % nips15submit_e.sty, including MK and drstrip@sandia
 %
-% last revision: March 2018
+% last revision: November 2018
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{nips_2018}[2018/03/03 NIPS 2018 submission/camera-ready style file]
+\ProvidesPackage{neurips_2018}[2018/11/19 NeurIPS 2018 submission/camera-ready style file]
 
 % declare final option, which creates camera-ready copy
-\newif\if@nipsfinal\@nipsfinalfalse
+\newif\if@neuripsfinal\@neuripsfinalfalse
 \DeclareOption{final}{
-  \@nipsfinaltrue
+  \@neuripsfinaltrue
 }
 
 % declare nonatbib option, which does not load natbib in case of
@@ -44,7 +45,7 @@
 
 % determine whether this is an anonymized submission
 \newif\if@submission\@submissiontrue
-\if@nipsfinal\@submissionfalse\fi
+\if@neuripsfinal\@submissionfalse\fi
 \if@preprint\@submissionfalse\fi
 
 % fonts
@@ -52,9 +53,9 @@
 \renewcommand{\sfdefault}{phv}
 
 % change this every year for notice string at bottom
-\newcommand{\@nipsordinal}{32nd}
-\newcommand{\@nipsyear}{2018}
-\newcommand{\@nipslocation}{Montr\'{e}al, Canada}
+\newcommand{\@neuripsordinal}{32nd}
+\newcommand{\@neuripsyear}{2018}
+\newcommand{\@neuripslocation}{Montr\'{e}al, Canada}
 
 % handle tweaks for camera-ready copy vs. submission copy
 \if@preprint
@@ -62,15 +63,15 @@
     Preprint. Work in progress.%
   }
 \else
-  \if@nipsfinal
+  \if@neuripsfinal
     \newcommand{\@noticestring}{%
-      \@nipsordinal\/ Conference on Neural Information Processing Systems
-      (NIPS \@nipsyear), \@nipslocation.%
+      \@neuripsordinal\/ Conference on Neural Information Processing Systems
+      (NeurIPS \@neuripsyear), \@neuripslocation.%
     }
   \else
     \newcommand{\@noticestring}{%
-      Submitted to \@nipsordinal\/ Conference on Neural Information
-      Processing Systems (NIPS \@nipsyear). Do not distribute.%
+      Submitted to \@neuripsordinal\/ Conference on Neural Information
+      Processing Systems (NeurIPS \@neuripsyear). Do not distribute.%
     }
 
     % line numbers for submission
@@ -121,7 +122,7 @@
     footskip=30pt
   }
   \@ifpackageloaded{fullpage}
-    {\PackageWarning{nips_2018}{fullpage package not allowed! Overwriting formatting.}}
+    {\PackageWarning{neurips_2018}{fullpage package not allowed! Overwriting formatting.}}
     {}
 }
 
@@ -202,16 +203,16 @@
 \renewcommand{\textfraction     }{0.1}
 \renewcommand{\floatpagefraction}{0.7}
 
-\newlength{\@nipsabovecaptionskip}\setlength{\@nipsabovecaptionskip}{7\p@}
-\newlength{\@nipsbelowcaptionskip}\setlength{\@nipsbelowcaptionskip}{\z@}
+\newlength{\@neuripsabovecaptionskip}\setlength{\@neuripsabovecaptionskip}{7\p@}
+\newlength{\@neuripsbelowcaptionskip}\setlength{\@neuripsbelowcaptionskip}{\z@}
 
-\setlength{\abovecaptionskip}{\@nipsabovecaptionskip}
-\setlength{\belowcaptionskip}{\@nipsbelowcaptionskip}
+\setlength{\abovecaptionskip}{\@neuripsabovecaptionskip}
+\setlength{\belowcaptionskip}{\@neuripsbelowcaptionskip}
 
 % swap above/belowcaptionskip lengths for tables
 \renewenvironment{table}
-  {\setlength{\abovecaptionskip}{\@nipsbelowcaptionskip}%
-   \setlength{\belowcaptionskip}{\@nipsabovecaptionskip}%
+  {\setlength{\abovecaptionskip}{\@neuripsbelowcaptionskip}%
+   \setlength{\belowcaptionskip}{\@neuripsabovecaptionskip}%
    \@float{table}}
   {\end@float}
 
