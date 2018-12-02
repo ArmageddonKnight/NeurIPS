@@ -1,0 +1,108 @@
+%% $Id: xurl.sty 705 2018-01-09 08:16:14Z herbert $
+%%
+%% This is file `xurl.sty',
+%%
+%% IMPORTANT NOTICE:
+%%
+%% Package `xurl'
+%%
+%% Herbert Voss <hvoss _at_ tug.org>
+%%
+%% This program can be redistributed and/or modified under the terms
+%% of the LaTeX Project Public License Distributed from CTAN archives
+%% in directory macros/latex/base/lppl.txt.
+%%
+%% DESCRIPTION:
+%%   `xurl' is a package for extended URL breaks
+%%
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{xurl}[2018/06/02 v 0.04 modify URL breaks]
+
+\DeclareOption*{\PassOptionsToPackage\CurrentOption{url}}
+\ProcessOptions\relax
+%
+\RequirePackage{url}
+%
+\def\UrlBreaks{%
+  \do\/%
+  \do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l%
+     \do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
+  \do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L%
+     \do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
+  \do0\do1\do2\do3\do4\do5\do6\do7\do8\do9\do=\do/\do.\do:%
+  \do\*\do\-\do\~\do\'\do\"\do\-}
+%
+\Urlmuskip=0mu plus 0.1mu
+%
+\endinput
+
+\def\UrlSpecials{%
+  \do\ {\Url@space}%
+  \do\%{\Url@percent}%
+  \do\^^M{\Url@space}%
+  \Url@force@Tilde
+  \do\/{/\penalty\UrlBreakPenalty}%
+  \do\a{a\penalty\UrlBreakPenalty}%
+  \do\b{b\penalty\UrlBreakPenalty}%
+  \do\c{c\penalty\UrlBreakPenalty}%
+  \do\d{d\penalty\UrlBreakPenalty}%
+  \do\e{e\penalty\UrlBreakPenalty}%
+  \do\f{f\penalty\UrlBreakPenalty}%
+  \do\g{g\penalty\UrlBreakPenalty}%
+  \do\h{h\penalty\UrlBreakPenalty}%
+  \do\i{i\penalty\UrlBreakPenalty}%
+  \do\j{j\penalty\UrlBreakPenalty}%
+  \do\k{k\penalty\UrlBreakPenalty}%
+  \do\l{l\penalty\UrlBreakPenalty}%
+  \do\m{m\penalty\UrlBreakPenalty}%
+  \do\n{n\penalty\UrlBreakPenalty}%
+  \do\o{o\penalty\UrlBreakPenalty}%
+  \do\p{p\penalty\UrlBreakPenalty}%
+  \do\q{q\penalty\UrlBreakPenalty}%
+  \do\r{r\penalty\UrlBreakPenalty}%
+  \do\s{s\penalty\UrlBreakPenalty}%
+  \do\t{t\penalty\UrlBreakPenalty}%
+  \do\u{u\penalty\UrlBreakPenalty}%
+  \do\v{v\penalty\UrlBreakPenalty}%
+  \do\w{w\penalty\UrlBreakPenalty}%
+  \do\x{x\penalty\UrlBreakPenalty}%
+  \do\y{y\penalty\UrlBreakPenalty}%
+  \do\z{z\penalty\UrlBreakPenalty}%
+  \do\A{A\penalty\UrlBreakPenalty}%
+  \do\B{B\penalty\UrlBreakPenalty}%
+  \do\C{C\penalty\UrlBreakPenalty}%
+  \do\D{D\penalty\UrlBreakPenalty}%
+  \do\E{E\penalty\UrlBreakPenalty}%
+  \do\F{F\penalty\UrlBreakPenalty}%
+  \do\G{G\penalty\UrlBreakPenalty}%
+  \do\H{H\penalty\UrlBreakPenalty}%
+  \do\I{I\penalty\UrlBreakPenalty}%
+  \do\J{J\penalty\UrlBreakPenalty}%
+  \do\K{K\penalty\UrlBreakPenalty}%
+  \do\L{L\penalty\UrlBreakPenalty}%
+  \do\M{M\penalty\UrlBreakPenalty}%
+  \do\N{N\penalty\UrlBreakPenalty}%
+  \do\O{O\penalty\UrlBreakPenalty}%
+  \do\P{P\penalty\UrlBreakPenalty}%
+  \do\Q{Q\penalty\UrlBreakPenalty}%
+  \do\R{R\penalty\UrlBreakPenalty}%
+  \do\S{S\penalty\UrlBreakPenalty}%
+  \do\T{T\penalty\UrlBreakPenalty}%
+  \do\U{U\penalty\UrlBreakPenalty}%
+  \do\V{V\penalty\UrlBreakPenalty}%
+  \do\W{W\penalty\UrlBreakPenalty}%
+  \do\X{X\penalty\UrlBreakPenalty}%
+  \do\Y{Y\penalty\UrlBreakPenalty}%
+  \do\Z{Z\penalty\UrlBreakPenalty}%
+%  \do0\do1\do2\do3\do4\do5\do6\do7\do8\do9\do=\do/\do.\do:%
+  \do\*{*\penalty\UrlBreakPenalty}%
+  \do\-{-\penalty\UrlBreakPenalty}%
+  \do\~{~\penalty\UrlBreakPenalty}%
+  \do\'{'\penalty\UrlBreakPenalty}%
+  \do\"{"\penalty\UrlBreakPenalty}%
+}
+\fi
+%
+
+
+
