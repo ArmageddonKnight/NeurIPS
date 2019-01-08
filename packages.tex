@@ -7,12 +7,12 @@
 
 \usepackage{soul} % Underline, Strikethrough
 \usepackage{xcolor}
-\usepackage{hyperref}
 \usepackage{tcolorbox}
+\usepackage{xurl, hyperref}
 \usepackage[super]{nth}
 \usepackage[ruled]{algorithm2e}
 \usepackage[shortlabels, inline]{enumitem}
-% Tables and Figures
+% Figures and Tables
 \usepackage{float, graphicx, wrapfig, subcaption}
 \usepackage{booktabs, tabularx, multirow, tablefootnote}
 % Monospaced Code Blocks
@@ -29,6 +29,7 @@
   breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
   breaklines=true,                 % sets automatic line breaking
   captionpos=b,                    % sets the caption-position to bottom
+  columns=fullflexible,            % reduce the column spacing
   commentstyle=\color{gray},       % comment style
   % deletekeywords={...},            % if you want to delete keywords from the given language
   escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
@@ -55,14 +56,6 @@
 \newcommand{\Emph}[1]{\ul{\textbf{#1}}}
 \newcommand{\EmphMathText}[1]{\underline{\mathbf{#1}}}
 \newcommand{\EmphMath}[1]{\underline{\boldsymbol{#1}}}
-
-\makeatletter
-\g@addto@macro{\UrlBreaks}{\UrlOrds}
-\g@addto@macro{\UrlBreaks}{\do\/%
-\do\a\do\b\do\c\do\d\do\e\do\f\do\g\do\h\do\i\do\j\do\k\do\l\do\m\do\n\do\o\do\p\do\q\do\r\do\s\do\t\do\u\do\v\do\w\do\x\do\y\do\z%
-\do\A\do\B\do\C\do\D\do\E\do\F\do\G\do\H\do\I\do\J\do\K\do\L\do\M\do\N\do\O\do\P\do\Q\do\R\do\S\do\T\do\U\do\V\do\W\do\X\do\Y\do\Z%
-\do\1\do\2\do\3\do\4\do\5\do\6\do\7\do\8\do\9\do\0\do\.}
-\makeatother
 
 \newtheorem{theorem}{Theorem}
 \newtheorem{claim}[theorem]{Claim}
