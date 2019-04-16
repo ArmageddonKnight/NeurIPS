@@ -28,10 +28,10 @@ template-update:
 		--prefix=$(shell python -c "import os.path; print os.path.relpath('$(DOC_ROOT)', '$(GIT_ROOT)')") \
 		https://github.com/ArmageddonKnight/$(TEMPLATE) master --squash
 
-YEAR := 2018
+YEAR := 2019
 
 style-update:
-	wget https://media.nips.cc/Conferences/NIPS$(YEAR)/Styles/nips_$(YEAR).sty -O nips.sty
+	wget https://media.nips.cc/Conferences/NeruIPS$(YEAR)/Styles/neruips_$(YEAR).sty -O nips.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
 	wget http://ctan.mirror.rafal.ca/macros/latex/contrib/xurl/latex/xurl.sty -O xurl.sty
