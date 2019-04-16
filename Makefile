@@ -30,7 +30,7 @@ template-update:
 
 YEAR := 2019
 
-style-update:
+upgrade:
 	wget https://media.nips.cc/Conferences/NeruIPS$(YEAR)/Styles/neruips_$(YEAR).sty -O nips.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
