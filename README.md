@@ -1,3 +1,3 @@
-# NeurIPS [![CircleCI](https://circleci.com/gh/ArmageddonKnight/NIPS.svg?style=svg)](https://circleci.com/gh/ArmageddonKnight/NIPS)
+# NeurIPS [![CircleCI](https://circleci.com/gh/ArmageddonKnight/NeurIPS.svg?style=svg)](https://circleci.com/gh/ArmageddonKnight/NeurIPS)
 
 Latex template based on NeurIPS.
