@@ -18,7 +18,7 @@ clean:
 YEAR := 2019
 
 upgrade:
-	wget https://media.nips.cc/Conferences/NeruIPS$(YEAR)/Styles/neruips_$(YEAR).sty -O nips.sty
+	wget https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -O neurips.sty
 	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
 		-O ACM-Reference-Format.bst
 	wget http://ctan.mirror.rafal.ca/macros/latex/contrib/xurl/latex/xurl.sty -O xurl.sty
