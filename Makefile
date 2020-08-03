@@ -15,10 +15,10 @@ clean:
 	           -name "*.log" -o -name "*.out" -o -name "*.pdf" -o \
 		   -name "*.synctex.gz" \) | xargs $(RM)
 
-YEAR := 2019
+YEAR := 2020
 
 upgrade:
-	wget https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -O neurips.sty
-	wget https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
-		-O ACM-Reference-Format.bst
-	wget http://ctan.mirror.rafal.ca/macros/latex/contrib/xurl/latex/xurl.sty -O xurl.sty
+	curl https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -o neurips.sty
+	curl https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
+		-o ACM-Reference-Format.bst
+	curl http://ctan.mirror.rafal.ca/macros/latex/contrib/xurl/latex/xurl.sty -o xurl.sty
