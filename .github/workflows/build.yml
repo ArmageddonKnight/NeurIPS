@@ -6,5 +6,10 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v1
-            - uses: armageddonknight/latex-templates@master
+            - uses: actions/checkout@master
+            - name: Prerequisite
+              run: |
+                sudo apt-get update
+                sudo apt-get install -y texlive-full make
+            - name: Build
+              run: make
