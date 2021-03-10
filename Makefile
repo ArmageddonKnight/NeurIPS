@@ -19,6 +19,6 @@ YEAR := 2020
 
 upgrade:
 	curl https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -o neurips.sty
-	curl https://github.com/borisveytsman/acmart/raw/master/ACM-Reference-Format.bst \
+	curl https://raw.githubusercontent.com/borisveytsman/acmart/master/ACM-Reference-Format.bst \
 		-o ACM-Reference-Format.bst
 	curl http://ctan.mirror.rafal.ca/macros/latex/contrib/xurl/latex/xurl.sty -o xurl.sty
