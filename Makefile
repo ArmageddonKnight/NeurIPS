@@ -15,7 +15,7 @@ clean:
 	           -name "*.log" -o -name "*.out" -o -name "*.pdf" -o \
 		   -name "*.synctex.gz" \) | xargs $(RM)
 
-YEAR := 2020
+YEAR := 2021
 
 upgrade:
 	curl https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -o neurips.sty
