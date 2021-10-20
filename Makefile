@@ -1,10 +1,8 @@
-all: main.pdf
+all: main.pdf Makefile
 
 %.pdf: %.tex
-ifneq ($(wildcard *.bib),)
 	pdflatex -synctex=1 -interaction=nonstopmode $<
-	bibtex $*.aux
-endif
+	-bibtex $*.aux
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 

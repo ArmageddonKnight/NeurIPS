@@ -5,11 +5,14 @@
 
 \usepackage[numbers]{natbib}
 
-\usepackage{xurl, hyperref}
+\usepackage{xurl}
+\usepackage{xcolor}
+\usepackage{pifont}
+\usepackage{hyperref}
 \usepackage[super]{nth}
 \usepackage[ruled]{algorithm2e}
 % Figures and Tables
-\usepackage{float, graphicx, wrapfig, subcaption}
+\usepackage{graphicx}
 \usepackage{booktabs, tabularx, multirow, tablefootnote}
 % Monospaced Code Blocks
 \usepackage{listings}
@@ -43,6 +46,14 @@
   stepnumber=1,                    % the step between two line-numbers. If it's 1, each line will be numbered
   stringstyle=\color{red},         % string literal style
   tabsize=4,                       % sets default tabsize to 4 spaces
+}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  citecolor=blue,
+  anchorcolor=blue
 }
 
 \newtheorem{theorem}{Theorem}
