@@ -17,5 +17,3 @@ YEAR := 2021
 
 upgrade:
 	curl https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles/neurips_$(YEAR).sty -o neurips.sty
-	curl https://raw.githubusercontent.com/borisveytsman/acmart/master/ACM-Reference-Format.bst \
-		-o ACM-Reference-Format.bst
