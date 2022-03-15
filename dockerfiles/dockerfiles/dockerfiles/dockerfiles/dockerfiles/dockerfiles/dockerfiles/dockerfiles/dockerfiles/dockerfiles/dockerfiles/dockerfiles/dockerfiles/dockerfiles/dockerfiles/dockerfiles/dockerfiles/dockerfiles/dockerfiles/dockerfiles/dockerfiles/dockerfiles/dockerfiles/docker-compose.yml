@@ -1,0 +1,11 @@
+version: '2.3'
+
+services:
+    texlive-dev:
+        image: texlive-full:latest
+        build:
+            context: ./dockerfiles
+            dockerfile: texlive.Dockerfile
+        volumes:
+            - .:/mnt
+        working_dir: /mnt
