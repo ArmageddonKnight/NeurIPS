@@ -7,9 +7,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@master
-            - name: Prerequisite
-              run: |
-                sudo apt-get update
-                sudo apt-get install -y texlive-full make
             - name: Build
-              run: make
+              run: docker-compose run --rm texlive-dev make
