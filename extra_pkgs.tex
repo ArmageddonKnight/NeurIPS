@@ -1,6 +1,11 @@
-\usepackage{courierten}
-\usepackage[T1]{fontenc}
 \usepackage{microtype}
+
+\IfFileExists{courierten.sty}{
+  \usepackage{courierten}
+}{
+  \usepackage[varqu]{zi4}
+}
+\usepackage[T1]{fontenc}
 
 \usepackage[ruled]{algorithm2e}
 \usepackage{hyperref}
