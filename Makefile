@@ -1,6 +1,6 @@
-all: main.pdf Makefile
+all: main.pdf main_plain.pdf
 
-%.pdf: %.tex
+%.pdf: %.tex Makefile
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	-bibtex $*.aux
 	pdflatex -synctex=1 -interaction=nonstopmode $<
