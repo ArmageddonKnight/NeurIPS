@@ -12,6 +12,9 @@ all: main.pdf
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 
+.PHONY: figures
+figures: $(CROPPED_PDFS)
+
 .PRECIOUS: $(CROPPED_PDFS)
 %-crop.pdf: %.pdf Makefile
 	pdfcrop $<
