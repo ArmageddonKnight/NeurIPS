@@ -4,14 +4,15 @@ $(filter-out $(wildcard $(FIGURES_FOLDER)/*-crop.pdf),$(wildcard $(FIGURES_FOLDE
 $(filter-out $(wildcard $(FIGURES_FOLDER)/**/*-crop.pdf),$(wildcard $(FIGURES_FOLDER)/**/*.pdf))
 CROPPED_PDFS := $(PDFS:.pdf=-crop.pdf)
 
-all: main.pdf main_plain.pdf $(CROPPED_PDFS)
+all: main.pdf
 
-%.pdf: %.tex Makefile
+%.pdf: %.tex Makefile $(CROPPED_PDFS)
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	-bibtex $*.aux
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 	pdflatex -synctex=1 -interaction=nonstopmode $<
 
+.PRECIOUS: $(CROPPED_PDFS)
 %-crop.pdf: %.pdf Makefile
 	pdfcrop $<
 
