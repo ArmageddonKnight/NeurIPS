@@ -9,5 +9,5 @@ jobs:
             - uses: actions/checkout@master
             - name: Build
               run: |
-                   docker build https://github.com/ArmageddonKnight/LaTeX-Templates.git#master -t texlive:2021
+                   docker build https://github.com/ArmageddonKnight/LaTeX-Templates.git#main -t texlive:2021
                    docker run -v $(pwd):/mnt -w /mnt texlive:2021 make
