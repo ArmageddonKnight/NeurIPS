@@ -27,10 +27,10 @@ clean:
 		   -name "*.synctex.gz" \) | xargs $(RM)
 	find $(FIGURES_FOLDER) -name "*-crop.pdf" | xargs $(RM)
 
-YEAR := 2024
+YEAR := 2025
 
 upgrade:
 	curl -O https://media.neurips.cc/Conferences/NeurIPS$(YEAR)/Styles.zip
 	unzip -u Styles.zip
-	mv Styles/neurips_2024.sty neurips.sty
+	mv Styles/neurips_${YEAR}.sty neurips.sty
 	$(RM) -r Styles.zip Styles
