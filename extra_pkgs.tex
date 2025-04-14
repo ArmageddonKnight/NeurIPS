@@ -1,17 +1,23 @@
+\usepackage[export]{adjustbox}
 \usepackage[ruled]{algorithm2e}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
 \usepackage{hyperref}
-\usepackage{microtype}
+\usepackage[final]{microtype}
 \usepackage{pifont}
 \usepackage{xcolor}
 \usepackage{xurl}
 % Figures and Tables
 \usepackage{graphicx}
-\usepackage{booktabs, multirow}
+\usepackage{booktabs}
+\usepackage{tabularray}
 % Monospaced Code Blocks
 \usepackage{listings}
 % Math Packages
-\usepackage{amsmath, amsfonts, amsthm}
+\usepackage{amsmath, amsfonts}
 \usepackage{nicefrac}
+
+\UseTblrLibrary{booktabs}
 
 \lstset{
   backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
@@ -41,9 +47,7 @@
   tabsize=4,                       % sets default tabsize to 4 spaces
 }
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{claim}[theorem]{Claim}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-\newtheorem*{remark}{Remark}
-\newtheorem*{example}{Example}
+\makeatletter
+\newcommand{\ssymbol}[1]{\@fnsymbol{#1}}
+\newcommand{\romanNumeral}[1]{\expandafter\@slowromancap\romannumeral #1@}
+\makeatother
